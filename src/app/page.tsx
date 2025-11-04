@@ -18,6 +18,12 @@ export default function Home() {
     products.find((p) => p.id === "acme-hoodie-001"),
     products.find((p) => p.id === "acme-onesie-001"),
     products.find((p) => p.id === "acme-baby-cap-001"),
+    products.find((p) => p.id === "acme-bomber-001"),
+    products.find((p) => p.id === "acme-bag-001"),
+    products.find((p) => p.id === "acme-shoes-001"),
+    products.find((p) => p.id === "acme-tshirt-003"),
+    products.find((p) => p.id === "acme-dog-sweater-001"),
+    products.find((p) => p.id === "acme-keyboard-001"),
   ].filter((p): p is NonNullable<typeof p> => p !== undefined);
 
   return (
@@ -68,8 +74,12 @@ export default function Home() {
       </section>
 
       {/* Horizontal Scrolling Carousel Section */}
-      <div className="w-full overflow-x-auto pb-6 pt-1">
-        <ul className="flex animate-carousel gap-4">
+      <div className="w-full pb-6 pt-1">
+        <Marquee
+          gradient={false}
+          speed={40}
+          pauseOnHover={true}
+        >
           {carouselProducts.map((product) => (
             <Card
               key={product.id}
@@ -80,18 +90,7 @@ export default function Home() {
               size="carousel"
             />
           ))}
-          {/* Duplicate products for infinite scroll effect */}
-          {carouselProducts.map((product) => (
-            <Card
-              key={`${product.id}-duplicate`}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.images[0]}
-              size="carousel"
-            />
-          ))}
-        </ul>
+        </Marquee>
       </div>
     </>
   );
