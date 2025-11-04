@@ -34,7 +34,7 @@ export default function Card({
     },
     carousel: {
       containerClass:
-        "relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3",
+        "relative h-[250px] w-[400px] flex-none mr-3 list-none",
       imageSizes: "(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw",
       priceTagClass: "",
     },
